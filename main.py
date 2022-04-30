@@ -96,7 +96,7 @@ def download_playlist(link):
             try:
                 ydl.download([url])
             except:
-                errorz = errorz + 1
+                errorz = int(errorz) + 1
                 stringz = url + "\n"
                 file.write(stringz)
     convert_all()
