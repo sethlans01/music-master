@@ -1,3 +1,4 @@
+from distutils.log import error
 import glob
 import os
 import youtube_dl
@@ -7,7 +8,8 @@ from tkinter import messagebox
 
 
 # GLOBAL VARIABLE THAT COUNTS DOWNLOAD ERRORS, WILL BE USEFUL LATER ;)
-errorz = 0
+global errorz
+errorz = int(0)
 
 # GET CURRENT DIRECTORY'S PATH
 dir_path = os.getcwd()
@@ -96,7 +98,7 @@ def download_playlist(link):
             try:
                 ydl.download([url])
             except:
-                errorz = int(errorz) + 1
+                errorz = errorz + int(1)
                 stringz = url + "\n"
                 file.write(stringz)
     convert_all()
